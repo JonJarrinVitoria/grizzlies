@@ -1,4 +1,5 @@
 import json, csv
+from flatten_json import flatten
 
 class grizzlies:
 
@@ -33,34 +34,9 @@ class grizzlies:
         with open(doc, "r") as json_leer:
 
 
-            filedata = json_leer.read()
+            self.fichero = json.load(json_leer)
 
-
-        filedata = filedata.replace('[', '???')
-
-        filedata = filedata.replace('{', '[')
-
-        filedata = filedata.replace('???', '{')
-
-        filedata = filedata.replace(']', '???')
-
-        filedata = filedata.replace('}', ']')
-
-        filedata = filedata.replace('???', '}')
-
-        print(filedata)
-
-
-
-        json_leido = json.load(filedata)
-
-
-
-
-
-        self.fichero = json_leido
-
-        print(self.fichero.items())
+            json_leer.close()
 
         return
 
@@ -89,44 +65,19 @@ class grizzlies:
 
 
 
-    def normalize_json(self, data: dict) -> dict:
 
-        new_data = dict()
-        for key, value in data.items():
-            if not isinstance(value, dict):
-                new_data[key] = value
-            else:
-                for k, v in value.items():
-                    new_data[key + "_" + k] = v
+    def convertir_a_csv(self, nido = True, separador = "_"):
 
 
-        return new_data
+
+        if nido == True:
 
 
-    def convertir_a_csv(self):
+            self.fichero =  [flatten(d, separator = separador) for d in self.fichero]
 
+            return
 
-        self.fichero = self.normalize_json(self.fichero)
-
-
-        csv_columns = self.fichero.keys()
-
-
-        csv_data = ",".join(csv_columns) + "\n"
-
-
-        new_row = list()
-        for col in csv_columns:
-            new_row.append(str(self.fichero [col]))
-
-
-        csv_data += ",".join(new_row) + "\n"
-
-
-        self.fichero = csv_data
-
-        print(self.fichero)
-
+        #self.fichero = flatten(self.fichero, separator = separador)
         return
 
 
@@ -148,6 +99,8 @@ class grizzlies:
 
             json_obj.write(self.fichero)
 
+            json_obj.close()
+
             print("Archivo guardado!")
 
             return
@@ -155,10 +108,24 @@ class grizzlies:
 
     def guardar_csv(self, nombre_csv):
 
-        with open(nombre_csv, "w+", encoding = "utf-8") as f:
-            f.write(str(self.fichero))
+        with open(nombre_csv, 'w') as csv_obj:
 
-            print("Archivo guardado!")
+            headers = self.fichero[0].keys()
+
+
+            writer = csv.DictWriter(csv_obj, fieldnames = headers)
+
+            writer.writeheader()
+
+            for instancia in self.fichero:
+
+                writer.writerow(instancia)
+
+
+            csv_obj.close()
+
+
+        print("Archivo guardado!")
 
         return
 
