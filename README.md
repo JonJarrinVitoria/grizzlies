@@ -12,14 +12,13 @@ https://github.com/JonJarrinVitoria/Grizzlies.git
 ```
 pip install grizzlies
 ```
-#¿Cómo funciona Grizzlies?
+# ¿Cómo funciona Grizzlies?
 ## Ejemplo de configuración y utilización con un archivo csv:
 poner aqui una imagen de como es el csv.
 El primer paso es importar la libreria y configurarla.
 ```
  import grizzlies as gz
  gz = gz()
- 
 ```
 Procedemos a leer el arhivo csv. En este caso, al ser un arhivo csv, le debemos introducir el nombre del archivo y el delimitador.
 ```
@@ -33,7 +32,7 @@ Finalmente, para poder guardar el arhivo, le indicaremos el directorio donde lo 
 ```
   gz.guardar('./MiDirectorio/archivo.json')
 ```
-#Dependencias
+# Dependencias
 * [json - Ponder que hace esta libreria](https://docs.python.org/es/3/library/json.html).
   - [pip install json](https://pypi.org/project/jsonlib/)
 * [csv - poner que hace esta libreria](https://docs.python.org/es/3/library/csv.html)
