@@ -18,7 +18,7 @@ pip install grizzlies
 El primer paso es importar la librería y configurarla.
 ```
  import grizzlies as gz
- gz = grizzlies()
+ gz = gz.grizzlies()
 ```
 Procedemos a leer el arhivo csv. En este caso, al ser un arhivo csv, le debemos introducir el nombre del archivo y el delimitador en caso de ser diferente a ";".
 ```
