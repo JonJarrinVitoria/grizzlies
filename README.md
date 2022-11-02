@@ -20,19 +20,19 @@ pip install grizzlies
 Para el primer paso, se importara la librería y se configurara.
 ```
  import grizzlies as gz
- gz = gz.grizzlies()
+ conversor = gz.grizzlies()
 ```
 Se procede a leer el arhivo **csv**. En este caso, al ser un archivo **csv**, se debe introducir el nombre del archivo y el delimitador en caso de ser diferente a ";".
 ```
-  gz.leer('./MiDirectorio/archivo.csv', delimitador=',')
+  conversor.leer('./MiDirectorio/archivo.csv', delimitador=',')
 ```
 En el siguiente paso, se convierte el archivo **csv** a tipo **json**. En este caso, no hace falta que se introduzca nada, ya que coge la información del paso anterior, y sabe identificar que tipo de archivo es, y por ende, a cual debe convertirlo:
 ```
-  gz.convertir()
+  conversor.convertir()
 ```
 Finalmente, para poder guardar el arhivo, se le debe indicar el directorio donde se quiere guardar, el nombre con el que se quiere guardar, junto con la extensión a la cual se ha convertido:
 ```
-  gz.guardar('./MiDirectorio/archivo.json')
+  conversor.guardar('./MiDirectorio/archivo.json')
 ```
 # Dependencias
 * [flatten_json - poner que hace esta libreria]().
