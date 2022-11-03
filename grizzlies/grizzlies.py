@@ -138,11 +138,14 @@ class grizzlies:
 
 
 
-    def convertir(self):
+    def convertir(self, separador):
         """
         
         Función para detectar automáticamente el tipo de archivo que se encuentra en el argumento fichero, y que se ejecute la función correspondiente
         para su conversión.
+        
+        Argumentos:
+            separador {string} -- Separador con el que se quiere transformar a json.
 
         Resultado:
             Se guarda directamente la conversión en el argumento fichero.
@@ -154,7 +157,7 @@ class grizzlies:
 
             return self.convertir_a_json()
 
-        return self.convertir_a_csv()
+        return self.convertir_a_csv(separador = "_")
 
 
 
@@ -184,12 +187,13 @@ class grizzlies:
             return
 
 
-    def guardar_csv(self, nombre_csv, delimitador = ";"):
+    def guardar_csv(self, nombre_csv, delimitador = delimitador):
         """
         Función para guardar el archivo que se encuentra en el argumento fichero como csv en el directorio introducido.
 
         Argumentos:
             nombre_csv {string} -- Ruta donde se quiere guardar el archivo y el nombre con el que se quiere guardar con la extensión csv.
+            delimitador {string} -- Delimitador con el que se quiere guardar el csv.(Default:";")
 
         Resultado:
             Se guarda el archivo en la ruta establecida y con el nombre deseado.
@@ -216,7 +220,7 @@ class grizzlies:
 
 
 
-    def guardar(self, nombre_archivo):
+    def guardar(self, nombre_archivo,delimitador = ";"):
         """
 
         Función para detectar automáticamente el tipo de archivo que se encuentra en el argumento fichero, y que se ejecute la función correspondiente
@@ -224,7 +228,8 @@ class grizzlies:
 
         Argumentos:
             nombre_archivo {string} -- Ruta donde se quiere guardar el archivo y el nombre con el que se quiere guardar con la extensión correspondiente.
-
+            delimitador {string} -- Delimitador con el que se quiere guardar el csv.(Default:";")
+            
         Resultado:
              Se guarda el archivo en la ruta establecida y con el nombre deseado.
 
@@ -234,7 +239,7 @@ class grizzlies:
 
             return self.guardar_json(nombre_archivo)
 
-        return self.guardar_csv(nombre_archivo)
+        return self.guardar_csv(nombre_archivo,delimitador = ";")
 
 
 
