@@ -184,7 +184,7 @@ class grizzlies:
             return
 
 
-    def guardar_csv(self, nombre_csv):
+    def guardar_csv(self, nombre_csv, delimitador = ";"):
         """
         Función para guardar el archivo que se encuentra en el argumento fichero como csv en el directorio introducido.
 
