@@ -1,15 +1,25 @@
 from distutils.core import setup
+from setuptools import setup
+from pathlib import Path
+
+
+directory = Path(__file__).parent
+long_description = (directory / "README.md").read_text()
+
+
 setup(
   name = 'grizzlies',
   packages = ['grizzlies'],
-  version = '0.1',
+  version = '0.1.3',
   license='MIT',
   description = 'Esta librería provee la capacidad de leer, convertir y guardar archivos csv a json, y viceversa.',
   author = 'Sendoa Busquet, Jon Jarrín',
   author_email = 'sendoa.busquet@alumni.mondragon.edu, jon.jarrin@alumni.mondragon.edu',
   url = 'https://github.com/JonJarrinVitoria/Grizzlies',
-  download_url = 'https://github.com/JonJarrinVitoria/grizzlies/archive/refs/tags/v_01.tar.gz',
+  download_url = 'https://github.com/JonJarrinVitoria/grizzlies/archive/refs/tags/v_01.3.tar.gz',
   keywords = ['CONVERT', 'JSON', 'CSV', 'NESTED', 'READ', 'SAVE'],
+  long_description=long_description,
+  long_description_content_type="text/markdown",
   install_requires=[
           'flatten_json',
       ],

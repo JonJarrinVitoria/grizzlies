@@ -2,4 +2,4 @@
 setup.cfg
 setup.py
 grizzlies/__init__.py
-grizzlies/class.py
+grizzlies/grizzlies.py
