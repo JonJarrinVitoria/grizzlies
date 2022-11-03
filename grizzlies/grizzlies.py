@@ -201,7 +201,7 @@ class grizzlies:
             headers = self.fichero[0].keys()
 
 
-            writer = csv.DictWriter(csv_obj, fieldnames = headers)
+            writer = csv.DictWriter(csv_obj, fieldnames = headers, delimiter = delimitador)
 
             writer.writeheader()
 
