@@ -10,7 +10,8 @@ Es una librería capaz de leer archivos tanto en formato **csv** como **json**, 
 El repositorio github donde se encuentra el código fuente es el siguiente:
 https://github.com/JonJarrinVitoria/Grizzlies.git .
 
-Para instalar la libreria grizzlies [pip install grizzlies](https://pypi.org/project/grizzlies/).
+Para instalar la libreria grizzlies: 
+https://pypi.org/project/grizzlies/.
 ```
 pip install grizzlies
 ```
