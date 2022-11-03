@@ -2,16 +2,12 @@ import json, csv
 from flatten_json import flatten
 
 class grizzlies:
-    """
-
-    
-
-    
-
-
-    """
-
     def __init__(self):
+        """
+            Atributos:
+                fichero -- Atributo donde se guarda el fichero sobre el que trabaja. (default:None).
+            
+        """
 
         self.fichero = None
 
@@ -24,7 +20,7 @@ class grizzlies:
             doc {csv} -- archivo sobre el que se quiere trabajar trabajar.
             delimitador {string} -- delimitador del archivo csv. (default:";").
         
-        Return:
+        Resultado:
             Se guarda directamente el resultado en el argumento fichero.
 
         """
@@ -57,7 +53,7 @@ class grizzlies:
         Argumentos:
             doc {json} -- archivo sobre el que se quiere trabajar trabajar.
         
-        Return:
+        Resultado:
             Se guarda directamente el resultado en el argumento fichero. 
 
         """
@@ -80,7 +76,7 @@ class grizzlies:
         Argumentos:
             doc {csv} -- archivo sobre el que se quiere trabajar trabajar.
 
-        Return:
+        Resultado:
             Se guarda directamente el resultado en el argumento fichero.
         
         """
@@ -104,7 +100,7 @@ class grizzlies:
         """
         Función para convertir un archivo csv a un archivo json.
 
-        Return:
+        Resultado:
             Se guarda directamente la conversión en el argumento fichero.
 
         """
@@ -125,7 +121,7 @@ class grizzlies:
             nido {boolean} -- (default:True)
             separador {string} -- Separador para tu archivo csv (default:"_")
 
-        Return:
+        Resultado:
             Se guarda directamente la conversión en el argumento fichero.
         
         """
@@ -148,7 +144,7 @@ class grizzlies:
         Función para detectar automáticamente el tipo de archivo que se encuentra en el argumento fichero, y que se ejecute la función correspondiente
         para su conversión.
 
-        Return:
+        Resultado:
             Se guarda directamente la conversión en el argumento fichero.
 
         """
@@ -171,7 +167,7 @@ class grizzlies:
         Argumentos:
             nombre_json {string} -- Ruta donde se quiere guardar el archivo y el nombre con el que se quiere guardar con la extensión json.
 
-        Return:
+        Resultado:
             Se guarda el archivo en la ruta establecida y con el nombre deseado.
 
         """
@@ -195,7 +191,7 @@ class grizzlies:
         Argumentos:
             nombre_csv {string} -- Ruta donde se quiere guardar el archivo y el nombre con el que se quiere guardar con la extensión csv.
 
-        Return:
+        Resultado:
             Se guarda el archivo en la ruta establecida y con el nombre deseado.
 
         """
@@ -229,7 +225,7 @@ class grizzlies:
         Argumentos:
             nombre_archivo {string} -- Ruta donde se quiere guardar el archivo y el nombre con el que se quiere guardar con la extensión correspondiente.
 
-        Returns:
+        Resultado:
              Se guarda el archivo en la ruta establecida y con el nombre deseado.
 
         """
