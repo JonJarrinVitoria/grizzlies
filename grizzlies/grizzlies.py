@@ -138,7 +138,7 @@ class grizzlies:
 
 
 
-    def convertir(self, separador):
+    def convertir(self, separador = "_"):
         """
         
         Función para detectar automáticamente el tipo de archivo que se encuentra en el argumento fichero, y que se ejecute la función correspondiente
@@ -157,7 +157,7 @@ class grizzlies:
 
             return self.convertir_a_json()
 
-        return self.convertir_a_csv(separador = "_")
+        return self.convertir_a_csv(separador = separador)
 
 
 
@@ -187,7 +187,7 @@ class grizzlies:
             return
 
 
-    def guardar_csv(self, nombre_csv, delimitador = delimitador):
+    def guardar_csv(self, nombre_csv, delimitador = ";"):
         """
         Función para guardar el archivo que se encuentra en el argumento fichero como csv en el directorio introducido.
 
@@ -220,7 +220,7 @@ class grizzlies:
 
 
 
-    def guardar(self, nombre_archivo,delimitador = ";"):
+    def guardar(self, nombre_archivo, delimitador = ";"):
         """
 
         Función para detectar automáticamente el tipo de archivo que se encuentra en el argumento fichero, y que se ejecute la función correspondiente
@@ -239,7 +239,7 @@ class grizzlies:
 
             return self.guardar_json(nombre_archivo)
 
-        return self.guardar_csv(nombre_archivo,delimitador = ";")
+        return self.guardar_csv(nombre_archivo,delimitador = delimitador)
 
 
 
