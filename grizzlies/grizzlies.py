@@ -67,6 +67,7 @@ class grizzlies:
         para su lectura.
         Argumentos:
             doc {csv} -- archivo sobre el que se quiere trabajar trabajar.
+            delimitador {string} -- delimitador del archivo csv. (default:";").
         Resultado:
             Se guarda directamente el resultado en el argumento fichero.
 
